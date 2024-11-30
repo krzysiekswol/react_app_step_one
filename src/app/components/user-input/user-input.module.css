@@ -1,0 +1,13 @@
+.text {
+  color: var(--jet-gray);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.submit {
+  background-color: var(--control-tower-green);
+  padding: 8px 16px;
+  color: var(--jet-gray);
+  font-weight: bolder;
+  border-radius: 4px;
+}

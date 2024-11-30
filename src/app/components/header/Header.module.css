@@ -1,0 +1,10 @@
+.header {
+  background-color: var(--sky-blue);
+}
+
+.text {
+  color: var(--jet-gray);
+  font-size: 24px;
+  text-align: center;
+  line-height: 1.5;
+}
