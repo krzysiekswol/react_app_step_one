@@ -3,11 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --sky-blue: #87CEEB;
-  --jet-gray: #343A40;
-  --control-tower-green: #3CB371;
+  --background-primary: #227B94;
+  --fonts-color: #FFDC7F;
+  --button-colors: #16325B;
 }
 
 @media (prefers-color-scheme: light) {
@@ -18,7 +16,7 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--fonts-color);
+  background: var(--background-primary);
   font-family: Arial, Helvetica, sans-serif;
 }

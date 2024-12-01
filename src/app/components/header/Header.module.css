@@ -1,9 +1,9 @@
 .header {
-  background-color: var(--sky-blue);
+  background-color: var(--background-primary);
 }
 
 .text {
-  color: var(--jet-gray);
+  color: var(--fonts-color);
   font-size: 24px;
   text-align: center;
   line-height: 1.5;
