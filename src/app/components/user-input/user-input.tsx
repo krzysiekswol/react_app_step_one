@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import styles from './user-input.module.css';
 import axios from 'axios';
+import config from '../../service/configuration';
+import { getDatabase, ref, onValue } from "firebase/database";
 
 export default function UserInput() {
   const [icao, setIcao] = useState<string>('');
@@ -11,9 +13,21 @@ export default function UserInput() {
     setIcao(event.target.value.toUpperCase());
   }
 
+  const database = getDatabase(config);
+  const dbRef = ref(database, 'Metar');
+  const fetchData = () => {
+    onValue(dbRef, (snapshot) => {
+      const data = snapshot.val();
+      console.log(data);
+    }, {
+      onlyOnce: true
+    });
+  }
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     _fetchMetar(icao);
+    fetchData();
   }
 
   const _fetchMetar = async (icao: string) => {
