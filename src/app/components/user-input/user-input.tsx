@@ -26,14 +26,14 @@ export default function UserInput() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    _fetchMetar(icao);
+    // _fetchMetar(icao);
     fetchData();
   }
 
   const _fetchMetar = async (icao: string) => {
     axios.get(setUrl(icao), {
       headers: {
-        Authorization: 'Bearer ' + 'your api key'
+        Authorization: 'Bearer ' + process.env.NEXT_PUBLIC_AVWX_API_KEY
       }
     }).then((response) => {
       console.log(response.data);
